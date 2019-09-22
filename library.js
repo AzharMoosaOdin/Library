@@ -64,6 +64,7 @@ function addBookToTable() {
 			let tbl = document.querySelector("#library");
 			container.removeChild(tbl);
 			addBookToTable();
+			localStorage.setItem("myLibrary", JSON.stringify(myLibrary));
 		}
 
 		let markRead = document.createElement("button");
@@ -114,14 +115,11 @@ function addBook() {
 		container.removeChild(tbl);
 		form.style.visibility = "hidden";
 		addBookToTable();
+		localStorage.setItem("myLibrary", JSON.stringify(myLibrary));
 	});
 }
 
-
-const deathlyHallows = new Book("Harry Potter and the Deathly Hallows", "J. K. Rowling", 607, false);
-const theHobbit = new Book("The Hobbit", "J.R.R. Tolkien", 295, true);
-addBookToLibrary(theHobbit);
-addBookToLibrary(deathlyHallows);
+myLibrary = JSON.parse(localStorage.getItem("myLibrary"));
 addBookToTable();
 addBookButton.addEventListener("click", () => {
 	addBook();
