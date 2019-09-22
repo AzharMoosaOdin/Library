@@ -22,15 +22,35 @@ h1 {
 	margin: 1.4rem;
 }
 
+.wrapper {
+  background-color: #333;
+  padding: 4rem;
+  width: 400px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: 200px;
+  grid-template-areas: 
+    ". a a ."
+    ". a a .";
+  z-index: 999;
+  position: fixed;
+  bottom: 230px;
+  left: 600px;
+  display: none;
+  border: 3px solid #fff;
+}
+
 #addBook {
 	text-align: center;
 	color: #fff;
-	margin: 1.2rem;
-	visibility: hidden;
-
+	z-index: 999;
+	grid-area: a;
+	align-self: center;
+	justify-self: center;
 }
 
-.delete, #newBook {
+.delete, #newBook{
 	padding: 1rem 2rem;
 	font-size: 20px;
 	border: none;
@@ -62,9 +82,25 @@ h1 {
 	background-color: #ff0000;
 }
 
+#add {
+	background-color: #82c91e;
+	padding: 0.5rem 1rem;
+	font-size: 16px;
+	border: none;
+	color: #fff;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+}
+
 #newBook {
 	background-color: #82c91e;
 	margin: 1.2rem;
+}
+
+.hidden {
+	display: none;
+	z-index: 999;
 }
 
 #library {

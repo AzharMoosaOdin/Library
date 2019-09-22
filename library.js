@@ -2,6 +2,7 @@ let container = document.querySelector(".container");
 let addBookButton = document.querySelector("#newBook");
 let submit = document.querySelector("#add");
 let form = document.querySelector("#addBook");
+let wrapper = document.querySelector(".wrapper");
 let count = 0;
 let myLibrary = [];
 
@@ -79,11 +80,13 @@ function addBookToTable() {
 		if (myLibrary[markRead.id].read == true) {
 			myLibrary[markRead.id].read = false;
 			markRead.classList.remove("read-true");
-			markRead.classList.add("read-false")
+			markRead.classList.add("read-false");
+			localStorage.setItem("myLibrary", JSON.stringify(myLibrary));
 		} else if (myLibrary[markRead.id].read == false) {
 			myLibrary[markRead.id].read = true;
 			markRead.classList.remove("read-false");
 			markRead.classList.add("read-true");
+			localStorage.setItem("myLibrary", JSON.stringify(myLibrary));
 		}
 		}
 		count += 1;
@@ -104,7 +107,8 @@ function addBookToTable() {
 }
 
 function addBook() {
-	form.style.visibility = "visible";
+	form.classList.remove("hidden");
+	wrapper.style.display = "inline";
 	submit.addEventListener("click", () => {
 		let title = document.getElementById("title").value;
 		let author = document.getElementById("author").value;
@@ -113,7 +117,8 @@ function addBook() {
 		addBookToLibrary(book);
 		let tbl = document.querySelector("#library");
 		container.removeChild(tbl);
-		form.style.visibility = "hidden";
+		form.classList.add("hidden");
+		wrapper.style.display = "none";
 		addBookToTable();
 		localStorage.setItem("myLibrary", JSON.stringify(myLibrary));
 	});
