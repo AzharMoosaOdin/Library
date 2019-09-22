@@ -1,0 +1,80 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #F4989C;
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size: 20px;
+}
+
+h1 {
+	color: #fff;
+}
+
+.container {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	margin: 1.4rem;
+}
+
+#addBook {
+	text-align: center;
+	color: #fff;
+	margin: 1.2rem;
+	visibility: hidden;
+
+}
+
+#delete, #newBook {
+	padding: 1rem 2rem;
+	font-size: 20px;
+	border: none;
+	color: #fff;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+}
+
+.read-true, .read-false {
+	padding: 1rem 2rem;
+	font-size: 20px;
+	border: none;
+	color: #fff;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+}
+
+#delete {
+	background-color: #ff0000;
+}
+
+.read-true {
+	background-color: #82c91e;
+}
+
+.read-false {
+	background-color: #ff0000;
+}
+
+#newBook {
+	background-color: #82c91e;
+	margin: 1.2rem;
+}
+
+#library {
+	margin: 1.4rem;
+	text-align: center;
+}
+
+table, td, th {
+	background-color: #f4f4f4;
+	border: 1px solid #333;
+	border-collapse: collapse;
+	padding: 1.8rem;
+}
