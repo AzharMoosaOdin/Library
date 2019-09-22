@@ -30,7 +30,7 @@ h1 {
 
 }
 
-#delete, #newBook {
+.delete, #newBook {
 	padding: 1rem 2rem;
 	font-size: 20px;
 	border: none;
@@ -50,7 +50,7 @@ h1 {
 	display: inline-block;
 }
 
-#delete {
+.delete {
 	background-color: #ff0000;
 }
 

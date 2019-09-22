@@ -57,7 +57,14 @@ function addBookToTable() {
 
 		let delButton = document.createElement("button");
 		delButton.textContent = "X";
-		delButton.id = "delete";
+		delButton.id = count;
+		delButton.classList.add("delete");
+		delButton.onclick = function del() {
+			myLibrary.splice(delButton.id, 1);
+			let tbl = document.querySelector("#library");
+			container.removeChild(tbl);
+			addBookToTable();
+		}
 
 		let markRead = document.createElement("button");
 		markRead.textContent = "Read";
